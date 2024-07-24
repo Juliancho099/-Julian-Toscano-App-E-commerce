@@ -2,13 +2,15 @@ import styled from 'styled-components';
 
 export const Header = styled.header`
 	display: flex;
+	position: sticky;
+	top: 0;
 	justify-content: center;
 	align-items: center;
 	padding: 1rem;
-	background-color: #fff;
+	background-color: #ffffffc1;
+	backdrop-filter: blur(10px);
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	width: 100%;
-	max-width: 1980px;
 	margin: 0 auto;
 	height: 100px;
 
@@ -18,16 +20,22 @@ export const Header = styled.header`
 `;
 
 export const NavSeccion = styled.div`
-	display: flex;
-	justify-content: space-evenly;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(auto, 1fr));
+	grid-template-rows: 80%;
+	grid-template-areas: 'nav logo search cart';
+	justify-content: center;
 	align-items: center;
-	max-height: 180px;
+	padding: 1rem;
 	width: 100%;
+	gap: 1rem;
+	height: 100%;
 
 	@media (min-width: 990px) {
 		display: grid;
 		justify-content: space-between;
-		gap: 1rem;
+		height: 190px;
+		grid-template-columns: 20px 1fr 20px;
 		grid-template-rows: 60% 40%;
 		grid-template-areas:
 			'search logo cart'
@@ -40,7 +48,7 @@ export const SearchContainer = styled.div`
 	grid-area: search;
 	display: flex;
 	align-items: center;
-	justify-content: flex-end;
+	justify-content: right;
 	width: 100%;
 	transition: transform 0.2s ease;
 
@@ -63,7 +71,7 @@ export const LogoContainer = styled.div`
 	z-index: 1;
 
 	img {
-		width: 100%;
+		width: 130%;
 	}
 
 	@media (min-width: 990px) {
@@ -105,6 +113,7 @@ export const CartContainer = styled.div`
 
 export const NavContainer = styled.nav`
 	grid-area: nav;
+	grid-row: span 2;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;

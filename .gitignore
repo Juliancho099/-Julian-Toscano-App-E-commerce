@@ -26,5 +26,15 @@ dist-ssr
 #Archivos innesesarios
 
 .prettierrc
-package-lock.json
-package.json
+
+#carpetas por ahora no
+
+ItemListContainer/
+Accesorios/
+Bloqueador/
+Cuidado-Personal/
+Maquillaje/
+Perfumes-Hombre/
+Perfumes-Mujer/
+Data/
+Helpers/

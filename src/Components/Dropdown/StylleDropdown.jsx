@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const DropdownMenu = styled.ul`
 	display: ${({ open }) => (open ? 'block' : 'none')};
 	position: absolute;
-	top: 17.5%;
+	top: 100%;
 	left: 44%;
 	transform: translateX(-50%);
 	width: 150px; /* Adjust the width as needed */
@@ -16,10 +16,6 @@ export const DropdownMenu = styled.ul`
 
 	@media (min-width: 990px) {
 		position: absolute;
-	}
-
-	@media (min-width: 1150px) {
-		transform: translateX(-44%);
 	}
 `;
 
