@@ -27,14 +27,4 @@ dist-ssr
 
 .prettierrc
 
-#carpetas por ahora no
 
-ItemListContainer/
-Accesorios/
-Bloqueador/
-Cuidado-Personal/
-Maquillaje/
-Perfumes-Hombre/
-Perfumes-Mujer/
-Data/
-Helpers/

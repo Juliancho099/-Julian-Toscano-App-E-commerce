@@ -40,7 +40,8 @@ export const NavSeccion = styled.div`
 		grid-template-areas:
 			'search logo cart'
 			'nav nav nav';
-		width: 90%;
+		width: 75%;
+
 	}
 `;
 
