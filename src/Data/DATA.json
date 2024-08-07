@@ -4,189 +4,161 @@
         "titulo": "Cadena Dorada",
         "categoria": "Accesorios",
         "stock": 75,
-        "img": "./src/Assets/Accesorios/25038463-01-removebg-preview.png"
+        "imagenes": ["/src/assets/Accesorios/25038463-01-removebg-preview.png"]
     },
     {
         "id": "Cadena-2",
         "titulo": "Cruz Dorada",
         "categoria": "Accesorios",
         "stock": 52,
-        "img": "./src/Assets/Accesorios/25038464-01-removebg-preview.png"
+        "imagenes": ["/src/assets/Accesorios/25038464-01-removebg-preview.png"]
     },
     {
         "id": "Bloqueador-1",
         "titulo": "Total Block 100 pequeño",
         "categoria": "Bloqueador",
         "stock": 80,
-        "img": "./src/Assets/Bloqueador/20012531-01-removebg-preview.png"
+        "imagenes": ["/src/assets/Bloqueador/20012531-01-removebg-preview.png"]
     },
     {
         "id": "Bloqueador-2",
         "titulo": "Total Block 100 grande",
         "categoria": "Bloqueador",
         "stock": 98,
-        "img": "./src/Assets/Bloqueador/Total-jumbo-removebg-preview.png"
+        "imagenes": ["/src/assets/Bloqueador/Total-jumbo-removebg-preview.png"]
     },
+    
     {
         "id": "Cuidado-Personal-1",
         "titulo": "Vivo Grande",
         "categoria": "Cuidado-Personal",
         "stock": 43,
-        "img": "./src/Assets/Cuidado-Personal/20013104-01-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/20013104-01-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-2",
         "titulo": "Vivo Pequeño",
         "categoria": "Cuidado-Personal",
         "stock": 68,
-        "img": "./src/Assets/Cuidado-Personal/20013105-01-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/20013105-01-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-3",
         "titulo": "Shampoo Vivo",
         "categoria": "Cuidado-Personal",
         "stock": 39,
-        "img": "./src/Assets/Cuidado-Personal/20013114-01-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/20013114-01-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-4",
         "titulo": "Suero Hidratante",
         "categoria": "Cuidado-Personal",
         "stock": 54,
-        "img": "./src/Assets/Cuidado-Personal/20013214-01-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/20013214-01-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-5",
         "titulo": "Perfume Corporal",
         "categoria": "Cuidado-Personal",
         "stock": 5,
-        "img": "./src/Assets/Cuidado-Personal/20013264-01-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/20013264-01-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-6",
         "titulo": "Desodorante Antitranspirante",
         "categoria": "Cuidado-Personal",
         "stock": 52,
-        "img": "./src/Assets/Cuidado-Personal/20013314-01-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/20013314-01-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-7",
         "titulo": "Suero Antioxidante",
         "categoria": "Cuidado-Personal",
         "stock": 73,
-        "img": "./src/Assets/Cuidado-Personal/20013585-01-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/20013585-01-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-8",
         "titulo": "Crema Hidratante",
         "categoria": "Cuidado-Personal",
         "stock": 15,
-        "img": "./src/Assets/Cuidado-Personal/1000177875-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/1000177875-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-9",
         "titulo": "limpiador 3 en 1",
         "categoria": "Cuidado-Personal",
         "stock": 25,
-        "img": "./src/Assets/Cuidado-Personal/1000179189-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/1000179189-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-10",
         "titulo": "Crema Iluminadora",
-        "categoria": "ESSA Bancorp, Inc.",
+        "categoria": "Cuidado-Personal",
         "stock": 16,
-        "img": "./src/Assets/Cuidado-Personal/1000186701-removebg-preview.png"
-    },
-    {
-        "id": "Cuidado-Personal-11",
-        "titulo": "Crema Iluminadora Rosada",
-        "categoria": "Cuidado-Personal",
-        "stock": 58,
-        "img": "./src/Assets/Cuidado-Personal/1000214584-removebg-preview.png"
-    },
-    {
-        "id": "Cuidado-Personal-12",
-        "titulo": "Crema Iluminadora Naranja",
-        "categoria": "Cuidado-Personal",
-        "stock": 100,
-        "img": "./src/Assets/Cuidado-Personal/1000214585-removebg-preview.png"
-    },
-    {
-        "id": "cidado-personal-13",
-        "titulo": "Crema Iluminadora Violeta",
-        "categoria": "Archrock Partners, L.P.",
-        "stock": 83,
-        "img": "./src/Assets/Cuidado-Personal/1000214586-removebg-preview.png"
-    },
-    {
-        "id": "Cuidado-Personal-14",
-        "titulo": "Crema Iluminadora Dorada",
-        "categoria": "Cuidado-Personal",
-        "stock": 100,
-        "img": "./src/Assets/Cuidado-Personal/1000214589-removebg-preview.png"
-        
+        "imagenes": ["/src/assets/Cuidado-Personal/hidratante-1.png", "/src/assets/Cuidado-Personal/hidratante-2.png", "/src/assets/Cuidado-Personal/hidratante-3.png", "/src/assets/Cuidado-Personal/hidratante-4.png"]
     },
     {
         "id": "Cuidado-Personal-15",
         "titulo": "Desodorante Antitranspirante temptation",
         "categoria": "Cuidado-Personal",
         "stock": 26,
-        "img": "./src/Assets/Cuidado-Personal/1000220088-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/1000220088-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-16",
         "titulo": "Desodorante Antitranspirante Ohm",
         "categoria": "Cuidado-Personal",
         "stock": 31,
-        "img": "./src/Assets/Cuidado-Personal/1000239904-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/1000239904-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-17",
         "titulo": "Desodorante Antitranspirante Ohm Azul",
         "categoria": "Cuidado-Personal",
         "stock": 26,
-        "img": "./src/Assets/Cuidado-Personal/1000239905-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/1000239905-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-18",
         "titulo": "Desodorante Antitranspirante osadia",
         "categoria": "Cuidado-Personal",
         "stock": 26,
-        "img": "./src/Assets/Cuidado-Personal/1000239906-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/1000239906-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-19",
         "titulo": "Desodorante Antitranspirante solo",
         "categoria": "Cuidado-Personal",
         "stock": 26,
-        "img": "./src/Assets/Cuidado-Personal/1000239907-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/1000239907-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-20",
         "titulo": "Desodorante Antitranspirante temptation beige",
         "categoria": "Cuidado-Personal",
         "stock": 26,
-        "img": "./src/Assets/Cuidado-Personal/1000239908-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/1000239908-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-21",
         "titulo": "Desodorante Antitranspirante temptation white",
         "categoria": "Cuidado-Personal",
         "stock": 26,
-        "img": "./src/Assets/Cuidado-Personal/1000239909-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/1000239909-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-22",
         "titulo": "Desodorante Antitranspirante CCori",
         "categoria": "Cuidado-Personal",
         "stock": 26,
-        "img": "./src/Assets/Cuidado-Personal/1000239916-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/1000239916-removebg-preview.png"]
     },
     {
         "id": "Cuidado-Personal-23",
         "titulo": "Desodorante Antitranspirante Zentro",
         "categoria": "Cuidado-Personal",
         "stock": 26,
-        "img": "./src/Assets/Cuidado-Personal/Zentro-Desodorante-removebg-preview.png"
+        "imagenes": ["/src/assets/Cuidado-Personal/Zentro-Desodorante-removebg-preview.png"]
     }
 ]

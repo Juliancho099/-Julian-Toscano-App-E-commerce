@@ -16,10 +16,21 @@ import SearchMenu from '../Buttons/SearchMenu';
 import { useState } from 'react';
 import ButtonNav from '../Buttons/ButtonNav/ButtonNav';
 import DropDown from '../Dropdown/DropDown';
+import { useNavigate } from 'react-router-dom';
 
 export default function NavBar() {
 	const [Menu, setMenu] = useState(false);
 	const [Dropdown, setDropdown] = useState(false);
+	const navigate = useNavigate();
+
+	const handleCloseMenus = () => {
+		setMenu(false);
+		setDropdown(false);
+	};
+
+	const handleClick = () => {
+		navigate('/');
+	};
 
 	return (
 		<Header>
@@ -33,35 +44,39 @@ export default function NavBar() {
 							<ButtonNav
 								text="Inicio"
 								property={() => setMenu(!Menu)}
+								href={"/"}
 							/>
 						</MenuItem>
 						<MenuItem onClick={() => setDropdown(!Dropdown)}>
 							<ButtonNav
 								text="Productos"
 							/>
-							<DropDown property={Dropdown}/>
+							<DropDown property={Dropdown} onClose={handleCloseMenus}/>
 						</MenuItem>
 						<MenuItem>
 							<ButtonNav
 								text="Servicios"
 								property={() => setMenu(!Menu)}
+								href={"/servicios"}
 							/>
 						</MenuItem>
 						<MenuItem>
 							<ButtonNav
 								text="Nosotros"
 								property={() => setMenu(!Menu)}
+								href={"/nosotros"}
 							/>
 						</MenuItem>
 						<MenuItem>
 							<ButtonNav
 								text="Contacto"
 								property={() => setMenu(!Menu)}
+								href={"/contacto"}
 							/>
 						</MenuItem>
 					</MenuContainer>
 				</NavContainer>
-				<LogoContainer>
+				<LogoContainer onClick={handleClick}>
 					<Logo />
 				</LogoContainer>
 					<SearchContainer>

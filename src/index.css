@@ -1,10 +1,24 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #FFFFFF;
+}
+
+.button_link {
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.5s ease;
+    width: 100%;
+
+    &:hover {
+        border-bottom: 1px solid #fd5c11;
+        transition: all 0.5s ease;
+    }
 }

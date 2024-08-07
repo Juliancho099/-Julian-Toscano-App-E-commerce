@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
-import { ButtonLink } from './StyleButton';
+import { Link } from 'react-router-dom';
 
-export default function ButtonNav({ text, property}) {
+export default function ButtonNav({ href, text, property}) {
 	return (
-		<ButtonLink onClick={property}>
+		<Link to={href} className='button_link' onClick={property}>
 			{text}
-		</ButtonLink>
+		</Link>
 	);
 }
 
 ButtonNav.propTypes = {
 	text: PropTypes.string.isRequired,
 	property: PropTypes.func,
+	href: PropTypes.string,
 };

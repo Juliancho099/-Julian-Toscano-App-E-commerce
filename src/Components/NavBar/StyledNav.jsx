@@ -12,17 +12,18 @@ export const Header = styled.header`
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	width: 100%;
 	margin: 0 auto;
-	height: 100px;
+	height: 90px;
+	z-index: 3;
 
 	@media (min-width: 990px) {
-		height: 160px;
+		height: 170px;
 	}
 `;
 
 export const NavSeccion = styled.div`
 	display: grid;
 	grid-template-columns: repeat(4, minmax(auto, 1fr));
-	grid-template-rows: 80%;
+	grid-template-rows: 70%;
 	grid-template-areas: 'nav logo search cart';
 	justify-content: center;
 	align-items: center;
@@ -41,7 +42,6 @@ export const NavSeccion = styled.div`
 			'search logo cart'
 			'nav nav nav';
 		width: 75%;
-
 	}
 `;
 
@@ -67,19 +67,27 @@ export const SearchContainer = styled.div`
 export const LogoContainer = styled.div`
 	grid-area: logo;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	z-index: 1;
+	justify-content: center;
+	min-width: clamp(100px, 30vw, 150px);
+	max-height: 160px;
+	width: 100%;
+	overflow: hidden;
+	cursor: pointer;
 
 	img {
-		width: 130%;
+		max-height: fit-content;
+		overflow: hidden;
+		align-self: center;
 	}
 
 	@media (min-width: 990px) {
 		img {
-			width: 36%;
+			max-width: 36%;
 		}
 	}
+
+	
 `;
 
 export const CartContainer = styled.div`
@@ -96,15 +104,13 @@ export const CartContainer = styled.div`
 		display: flex;
 		align-items: end;
 
-		span{
+		span {
 			font-size: 1rem;
 			color: #fff;
 			border: 2px solid #000;
 			background-color: #000;
 			border-radius: 2rem;
 			width: 20px;
-
-			
 		}
 	}
 	img {
@@ -124,7 +130,7 @@ export const NavContainer = styled.nav`
 
 export const MenuContainer = styled.ul`
 	position: absolute;
-	top: 102px;
+	top: 102.5%;
 	left: ${({ open }) => (open ? '0' : '-100%')};
 	width: 100%;
 	height: 100vh;
@@ -136,7 +142,12 @@ export const MenuContainer = styled.ul`
 	list-style-type: none;
 	gap: 20px;
 	transition: left 0.1s ease-in-out;
-	background-color: #fff;
+	background-color: #f1ede9;
+
+	@media (min-width: 768px) {
+		width: 50%;
+		left: ${({ open }) => (open ? '0' : '-50%')};
+	}
 
 	@media (min-width: 990px) {
 		position: initial;
@@ -175,5 +186,3 @@ export const MobileIcon = styled.div`
 		display: none;
 	}
 `;
-
-

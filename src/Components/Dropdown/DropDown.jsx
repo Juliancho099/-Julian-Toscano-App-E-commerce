@@ -1,24 +1,29 @@
 import PropTypes from 'prop-types';
 import ButtonNav from '../Buttons/ButtonNav/ButtonNav';
 import { DropdownMenu, DropdownItem } from './StylleDropdown';
+import { FaArrowLeft } from 'react-icons/fa6';
 
-export default function DropDown({ property }) {
+export default function DropDown({ property, onClose }) {
 	return (
 		<DropdownMenu open={property}>
+			<div>
+				<FaArrowLeft  open={property}/>
+				<p>Productos</p>
+			</div>
 			<DropdownItem>
-				<ButtonNav text="Todos" />
+				<ButtonNav text="Todos" property={onClose} href={"/productos"}/>
 			</DropdownItem>
 			<DropdownItem>
-				<ButtonNav text="Perfumes" />
+				<ButtonNav text="Accesorios" property={onClose} href={"/productos/Accesorios"} />
 			</DropdownItem>
 			<DropdownItem>
-				<ButtonNav text="Cremas" />
+				<ButtonNav text="Cuidado Personal" property={onClose} href={"/productos/Cuidado-Personal"}/>
 			</DropdownItem>
 			<DropdownItem>
-				<ButtonNav text="Hombre" />
+				<ButtonNav text="Bloqueadores" property={onClose} href={"/productos/Bloqueador"}/>
 			</DropdownItem>
 			<DropdownItem>
-				<ButtonNav text="Mujer" />
+				<ButtonNav text="Mujer" property={onClose} />
 			</DropdownItem>
 		</DropdownMenu>
 	);
@@ -26,4 +31,5 @@ export default function DropDown({ property }) {
 
 DropDown.propTypes = {
 	property: PropTypes.bool,
+	onClose: PropTypes.func,
 };
