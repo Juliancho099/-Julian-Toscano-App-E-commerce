@@ -1,10 +1,4 @@
 import PropTypes from 'prop-types';
-import {
-	DetailsContain,
-	Img,
-	ImgContain,
-	ItemDetailSection,
-} from './ItemDetailStyle';
 import { useState } from 'react';
 
 export default function ItemDetail({ item }) {
@@ -18,57 +12,62 @@ export default function ItemDetail({ item }) {
 	};
 
 	return (
-		<ItemDetailSection>
-			<ImgContain>
-				<div>
-					<Img src={Imagen} alt={titulo} />
+		<article className="sm:w-[90%] xl:w-[70%] flex flex-wrap sm:flex-nowrap justify-center items-center font-serif m-auto w-full">
+			<section className="w-auto sm:w-1/3 lg:w-[50%] xl:w-[40%] flex flex-wrap items-center justify-center m-auto">
+				<div className="flex items-center justify-center m-auto w-full relative">
+					<img
+						src={Imagen}
+						alt={titulo}
+						className="w-full h-full object-cover rounded-lg"
+					/>
 				</div>
 				{imagenes.length > 1 && (
-					<div className="galeria">
+					<div className="galeria flex w-full items-center justify-center gap-1">
 						{imagenes.map((img, index) => (
-							<img
-								key={img.id || index}
-								src={img}
-								alt={titulo}
-								className={`imagen-chica ${
-									Seleccionada === index ? 'seleccionada' : ''
-								}`}
-								onClick={() => HandleClickImagen(index)}
-							/>
+							<div key={img.id || index}>
+								<img
+									src={img}
+									alt={titulo}
+									className={`imagen-chica w-28 object-cover rounded-lg ${
+										Seleccionada === index
+											? 'border border-black'
+											: ''
+									}`}
+									onClick={() => HandleClickImagen(index)}
+								/>
+							</div>
 						))}
 					</div>
 				)}
-			</ImgContain>
-			<DetailsContain>
-				<div className='descripcion'>
-					<h3>{titulo}</h3>
-					<p>${stock}</p>
+			</section>
+			<section className="flex-auto p-6 w-full sm:max-w-[40%] xl:mr-10">
+				<div className="descripcion flex flex-wrap items-baseline">
+					<h3 className="w-full flex-none mb-3 text-2xl leading-none text-slate-900">
+						{titulo}
+					</h3>
+					<p className="flex-auto text-lg font-medium text-slate-500">
+						${stock}
+					</p>
 					<small>Lorem ipsum dolor sit.</small>
 				</div>
-				<div className='botones'>
-					<button>agotado</button>
-					<button>Comprar</button>
+				<div className="botones flex space-x-4 mb-5 text-sm font-medium">
+					<div className="flex-auto flex space-x-4 pr-4">
+						<button
+							className="flex-none w-1/2 h-12 uppercase font-medium tracking-wider bg-slate-900 text-white"
+							type="submit"
+						>
+							Buy now
+						</button>
+						<button
+							className="flex-none w-1/2 h-12 uppercase font-medium tracking-wider border border-slate-200 text-slate-900"
+							type="button"
+						>
+							Add to bag
+						</button>
+					</div>
 				</div>
-				<div className='detalles'>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Voluptatibus, voluptatum debitis? Provident, quod animi
-						quibusdam saepe dicta autem magni magnam.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Earum, dolores!
-					</p>
-					<p>
-						Lorem, ipsum dolor sit amet consectetur adipisicing
-						elit. Odio laboriosam minus suscipit? Obcaecati
-						excepturi, sapiente velit soluta doloremque, error
-						officia quidem saepe quibusdam eaque perferendis
-						debitis, amet ullam beatae a?
-					</p>
-				</div>
-			</DetailsContain>
-		</ItemDetailSection>
+			</section>
+		</article>
 	);
 }
 

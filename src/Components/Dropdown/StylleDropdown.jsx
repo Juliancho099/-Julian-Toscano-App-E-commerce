@@ -48,7 +48,7 @@ export const DropdownMenu = styled.ul`
 		left: 45%;
 		width: 180px;
 		transform: translateX(-45%);
-		height: 105%;
+		height: 120%;
 		padding: 0;
 		margin-top: 0;
 

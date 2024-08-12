@@ -23,7 +23,7 @@ export default function DropDown({ property, onClose }) {
 				<ButtonNav text="Bloqueadores" property={onClose} href={"/productos/Bloqueador"}/>
 			</DropdownItem>
 			<DropdownItem>
-				<ButtonNav text="Mujer" property={onClose} />
+				<ButtonNav text="Maquillaje" property={onClose} href={"/productos/Maquillaje"}/>
 			</DropdownItem>
 		</DropdownMenu>
 	);

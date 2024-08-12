@@ -19,13 +19,13 @@ function App() {
 						path="/productos/:categoria"
 						element={<ItemListContainer />}
 					/>
-					<Route path="/servicios" element={<Servicios />} />
-					<Route path="/nosotros" element={<Nosotros />} />
-					<Route path="/contacto" element={<Contacto />} />
 					<Route
 						path="/item/:id"
 						element={<ItemDetailsContainer />}
 					/>
+					<Route path="/servicios" element={<Servicios />} />
+					<Route path="/nosotros" element={<Nosotros />} />
+					<Route path="/contacto" element={<Contacto />} />
 				</Routes>
 			</BrowserRouter>
 		</>

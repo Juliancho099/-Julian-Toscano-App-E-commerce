@@ -5,21 +5,8 @@ export const ItemDetailSection = styled.section`
 	flex-flow: column;
 	align-items: center;
 	justify-content: center;
-	margin: auto;
+	margin: 0 auto;
 	width: 90%;
-	gap: 20px;
-	padding: 20px;
-
-	@media (width >= 768px) {
-		display: grid;
-        align-items: flex-start;
-		grid-template-columns: 2fr 1fr;
-	}
-
-	@media (width >= 990px) {
-        width: 70%;
-		grid-template-columns: repeat(2, minmax(1fr, 4fr));
-	}
 `;
 export const ImgContain = styled.article`
     flex: 1;
@@ -45,9 +32,7 @@ export const ImgContain = styled.article`
             transition: border-color .3s ease;
         }
 
-        .seleccionada{
-            border-color: #000;
-        }
+        
     }
 
 	

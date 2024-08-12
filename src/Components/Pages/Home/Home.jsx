@@ -1,3 +1,4 @@
+import ProductosDestacados from "./Destacados/ProductosDestacados";
 import Video from "./Video/Video"
 
 export default function Home() {
@@ -5,7 +6,7 @@ export default function Home() {
   return (
 		<>
 			<Video video={urlVideo} />
-			<div>Home</div>
+			<ProductosDestacados />
 		</>
   );
 }

@@ -11,7 +11,7 @@ import {
 } from './StyledNav';
 import { FaAlignLeft, FaX } from 'react-icons/fa6';
 import Logo from '../Logo/Logo';
-import CartButton from '../Buttons/CartButton';
+import CartWidget from '../Buttons/CartWidget';
 import SearchMenu from '../Buttons/SearchMenu';
 import { useState } from 'react';
 import ButtonNav from '../Buttons/ButtonNav/ButtonNav';
@@ -83,7 +83,7 @@ export default function NavBar() {
 						<SearchMenu />
 					</SearchContainer>
 					<CartContainer>
-						<CartButton />
+						<CartWidget />
 					</CartContainer>
 				
 			</NavSeccion>
