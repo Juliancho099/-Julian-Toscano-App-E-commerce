@@ -6,10 +6,13 @@ import Nosotros from './Components/Pages/Nosotros/Nosotros';
 import Contacto from './Components/Pages/Contacto/Contacto';
 import ItemListContainer from './Components/Pages/Productos/ItemListContainer/ItemListContainer/ItemListContainer';
 import ItemDetailsContainer from './Components/Pages/Productos/ItemListContainer/Items/ItemDetails/ItemDetailsContainer';
+import CarritoCompras from './Components/Carrito/Carrito'
+import {CartProvider } from './contexts/CartContext';
 
 function App() {
+
 	return (
-		<>
+		<CartProvider>
 			<BrowserRouter>
 				<NavBar />
 				<Routes>
@@ -26,9 +29,10 @@ function App() {
 					<Route path="/servicios" element={<Servicios />} />
 					<Route path="/nosotros" element={<Nosotros />} />
 					<Route path="/contacto" element={<Contacto />} />
+					<Route path="/carrito" element={<CarritoCompras />} />
 				</Routes>
 			</BrowserRouter>
-		</>
+		</CartProvider>
 	);
 }
 

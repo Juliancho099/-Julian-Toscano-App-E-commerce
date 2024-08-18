@@ -86,8 +86,6 @@ export const LogoContainer = styled.div`
 			max-width: 36%;
 		}
 	}
-
-	
 `;
 
 export const CartContainer = styled.div`
@@ -130,7 +128,7 @@ export const NavContainer = styled.nav`
 
 export const MenuContainer = styled.ul`
 	position: absolute;
-	top: 102.5%;
+	top: 100%;
 	left: ${({ open }) => (open ? '0' : '-100%')};
 	width: 100%;
 	height: 100vh;

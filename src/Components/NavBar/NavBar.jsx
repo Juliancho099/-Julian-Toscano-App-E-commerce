@@ -17,15 +17,21 @@ import { useState } from 'react';
 import ButtonNav from '../Buttons/ButtonNav/ButtonNav';
 import DropDown from '../Dropdown/DropDown';
 import { useNavigate } from 'react-router-dom';
+import Carrito from '../Carrito/Carrito';
 
 export default function NavBar() {
 	const [Menu, setMenu] = useState(false);
 	const [Dropdown, setDropdown] = useState(false);
+	const [openCart, setOpenCart] = useState(false);
 	const navigate = useNavigate();
 
 	const handleCloseMenus = () => {
 		setMenu(false);
 		setDropdown(false);
+	};
+
+	const handleCloseCart = () => {
+		setOpenCart(!openCart);
 	};
 
 	const handleClick = () => {
@@ -44,34 +50,35 @@ export default function NavBar() {
 							<ButtonNav
 								text="Inicio"
 								property={() => setMenu(!Menu)}
-								href={"/"}
+								href={'/'}
 							/>
 						</MenuItem>
 						<MenuItem onClick={() => setDropdown(!Dropdown)}>
-							<ButtonNav
-								text="Productos"
+							<ButtonNav text="Productos" />
+							<DropDown
+								property={Dropdown}
+								onClose={handleCloseMenus}
 							/>
-							<DropDown property={Dropdown} onClose={handleCloseMenus}/>
 						</MenuItem>
 						<MenuItem>
 							<ButtonNav
 								text="Servicios"
 								property={() => setMenu(!Menu)}
-								href={"/servicios"}
+								href={'/servicios'}
 							/>
 						</MenuItem>
 						<MenuItem>
 							<ButtonNav
 								text="Nosotros"
 								property={() => setMenu(!Menu)}
-								href={"/nosotros"}
+								href={'/nosotros'}
 							/>
 						</MenuItem>
 						<MenuItem>
 							<ButtonNav
 								text="Contacto"
 								property={() => setMenu(!Menu)}
-								href={"/contacto"}
+								href={'/contacto'}
 							/>
 						</MenuItem>
 					</MenuContainer>
@@ -79,13 +86,13 @@ export default function NavBar() {
 				<LogoContainer onClick={handleClick}>
 					<Logo />
 				</LogoContainer>
-					<SearchContainer>
-						<SearchMenu />
-					</SearchContainer>
-					<CartContainer>
-						<CartWidget />
-					</CartContainer>
-				
+				<SearchContainer>
+					<SearchMenu />
+				</SearchContainer>
+				<CartContainer>
+					<CartWidget property={handleCloseCart} />
+					<Carrito op={openCart} property={handleCloseCart} />
+				</CartContainer>
 			</NavSeccion>
 		</Header>
 	);
