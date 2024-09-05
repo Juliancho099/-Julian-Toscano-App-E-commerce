@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const VideoSection = styled.section`
 	position: relative;
+	margin-top: 1px;
 	height: 40vh;
 	width: 100%;
 	background-size: cover;

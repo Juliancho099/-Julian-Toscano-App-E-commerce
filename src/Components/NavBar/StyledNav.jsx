@@ -2,16 +2,18 @@ import styled from 'styled-components';
 
 export const Header = styled.header`
 	display: flex;
+	flex-direction: column;
 	position: sticky;
 	top: 0;
 	justify-content: center;
 	align-items: center;
 	padding: 1rem;
+	padding-top: 1.7rem;
 	background-color: #ffffffc1;
 	backdrop-filter: blur(10px);
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	width: 100%;
-	margin: 0 auto;
+	margin: 5px auto;
 	height: 90px;
 	z-index: 3;
 
@@ -70,7 +72,7 @@ export const LogoContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	min-width: clamp(100px, 30vw, 150px);
-	max-height: 160px;
+	max-height: 100px;
 	width: 100%;
 	overflow: hidden;
 	cursor: pointer;
@@ -82,6 +84,7 @@ export const LogoContainer = styled.div`
 	}
 
 	@media (min-width: 990px) {
+		max-height: 160px;
 		img {
 			max-width: 36%;
 		}
@@ -89,6 +92,7 @@ export const LogoContainer = styled.div`
 `;
 
 export const CartContainer = styled.div`
+	position: relative;
 	grid-area: cart;
 	display: flex;
 	align-items: center;
@@ -141,6 +145,7 @@ export const MenuContainer = styled.ul`
 	gap: 20px;
 	transition: left 0.1s ease-in-out;
 	background-color: #f1ede9;
+	z-index: 4;
 
 	@media (min-width: 768px) {
 		width: 50%;
@@ -163,6 +168,21 @@ export const MenuItem = styled.li`
 	display: flex;
 	justify-content: start;
 	align-items: flex-start;
+	.button_link {
+		cursor: pointer;
+		color: #333;
+		text-decoration: none;
+		font-size: 1rem;
+		transition: all 0.5s ease;
+		width: 100%;
+		margin-bottom: 10px;
+
+		&:hover {
+			border-bottom: 1px solid #fd5c11;
+			transition: all 0.5s ease;
+		}
+	}
+
 
 	@media (min-width: 990px) {
 		width: auto;

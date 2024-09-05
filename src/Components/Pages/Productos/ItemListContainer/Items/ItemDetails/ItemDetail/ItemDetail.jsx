@@ -1,29 +1,40 @@
 import PropTypes from 'prop-types';
-import { useContext, useState } from 'react';
-import { CantidadCont, ContCantidad, Resta, Suma } from './ItemDetailStyle';
+import { useContext, useEffect, useState } from 'react';
+import { ContCantidad} from './ItemDetailStyle';
 import { CartContext } from '../../../../../../../contexts/CartContext';
+import ItemCount from './ItemCount/ItemCount';
+import { useNavigate } from 'react-router-dom';
+import ImageList from './ImageList';
+
 
 export default function ItemDetail({ item }) {
-	const { titulo, imagenes, stock } = item;
+	const { titulo, imagenes, precio, id, stock } = item;
 	const [Imagen, setImagen] = useState(imagenes[0]);
 	const [Seleccionada, setSeleccionada] = useState(null);
 	const [cantidad, setCantidad] = useState(1);
 	const { AgregarAlCarrito } = useContext(CartContext);
+
+	const navigate = useNavigate();
+
+	const checkOut = () => {
+		navigate('/checkout');
+	};
+
+	const handleAddToBag = (item, cantidad, Imagen) => {
+		AgregarAlCarrito(item, cantidad, Imagen);
+		setCantidad(1);
+	};
+
 
 	const HandleClickImagen = (ImgIndex) => {
 		setImagen(imagenes[ImgIndex]);
 		setSeleccionada(ImgIndex);
 	};
 
-	const HandleSumar = () => {
-		setCantidad(cantidad + 1);
-	};
-
-	const HandleRestar = () => {
-		if (cantidad > 1) {
-			setCantidad(cantidad - 1);
-		}
-	};
+	useEffect(() => {
+		setImagen(imagenes[0]);
+		setSeleccionada(null);
+	},	[id, imagenes]);
 
 
 	return (
@@ -32,44 +43,34 @@ export default function ItemDetail({ item }) {
 				<div className="flex items-center justify-center m-auto w-full relative">
 					<img
 						src={Imagen}
-						alt={titulo}
+						alt={titulo && titulo}
 						className="w-full h-full object-cover rounded-lg"
 					/>
 				</div>
 				{imagenes.length > 1 && (
 					<div className="galeria flex w-full items-center justify-center gap-1">
-						{imagenes.map((img, index) => (
-							<div key={img.id || index}>
-								<img
-									src={img}
-									alt={titulo}
-									className={`imagen-chica w-28 object-cover rounded-lg ${
-										Seleccionada === index
-											? 'border border-black'
-											: ''
-									}`}
-									onClick={() => HandleClickImagen(index)}
-								/>
-							</div>
-						))}
+						<ImageList
+							imagenes={imagenes}
+							HandleClickImagen={HandleClickImagen}
+							Seleccionada={Seleccionada}
+							titulo={titulo}
+						/>
 					</div>
 				)}
 			</section>
 			<section className="flex-auto p-6 w-full sm:max-w-[40%] xl:mr-10">
 				<div className="descripcion flex flex-wrap items-baseline">
 					<h3 className="w-full flex-none mb-3 text-2xl leading-none text-slate-900">
-						{titulo}
+						{titulo && titulo}
 					</h3>
 					<p className="flex-auto text-lg font-medium text-slate-500">
-						${stock}
+						${precio}
 					</p>
 					<small>Lorem ipsum dolor sit.</small>
 				</div>
 
 				<ContCantidad>
-					<Resta onClick={HandleRestar}>-</Resta>
-					<CantidadCont>{cantidad}</CantidadCont>
-					<Suma onClick={HandleSumar}>+</Suma>
+					<ItemCount stock={stock} cantidad={cantidad} setCantidad={setCantidad} />
 				</ContCantidad>
 
 				<div className="botones flex space-x-4 mb-5 text-sm font-medium">
@@ -77,13 +78,19 @@ export default function ItemDetail({ item }) {
 						<button
 							className="flex-none w-1/2 h-12 uppercase font-medium tracking-wider bg-slate-900 text-white"
 							type="submit"
-							onClick={()=> {AgregarAlCarrito(item, cantidad) }}
+							onClick={() => {
+								handleAddToBag(item, cantidad, Imagen);
+									checkOut();
+							}}
 						>
-							Buy now
+							Comprar Ahora
 						</button>
 						<button
 							className="flex-none w-1/2 h-12 uppercase font-medium tracking-wider border border-slate-200 text-slate-900"
 							type="button"
+							onClick={() => {
+								handleAddToBag(item, cantidad, Imagen);
+							}}
 						>
 							Add to bag
 						</button>
@@ -98,9 +105,10 @@ ItemDetail.propTypes = {
 	item: PropTypes.shape({
 		id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 			.isRequired,
-		titulo: PropTypes.string.isRequired,
+		titulo: PropTypes.string,
 		imagenes: PropTypes.arrayOf(PropTypes.string),
-		stock: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+		precio: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 			.isRequired,
+		stock: PropTypes.number,
 	}).isRequired,
 };

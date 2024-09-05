@@ -1,20 +1,32 @@
 import proptypes from 'prop-types';
 import ButtonNav from '../../../Buttons/ButtonNav/ButtonNav';
+import { CartContext } from '../../../../contexts/CartContext';
+import { useContext } from 'react';
 export default function Producto({ destacado }) {
-	const { id, titulo, imagenes, stock } = destacado;
+	const { id, titulo, imagenes, precio } = destacado;
+	const { AgregarAlCarrito } = useContext(CartContext);
+
+	if (!destacado) {
+		return null;
+	}
 	return (
-		<div className="w-full flex flex-col justify-center items-center gap-4 bg-gray-600 h-full p-3">
-			<div className="w-full flex justify-center items-center h-auto object-cover ">
+		<div className="destacados">
+			<div className="destacados__img">
 				<img
 					src={imagenes[0]}
 					alt={titulo}
 					className="w-full h-full object-cover rounded-lg"
 				/>
 			</div>
-			<div className="flex flex-col justify-center items-center gap-4 p-4 h-2/5">
-				<h3 className="text-sm md:text-[1.2rem] font-semibold text-center">{titulo}</h3>
-				<p>${stock}</p>
-				<ButtonNav text="Comprar" href={`/item/${id}`} />
+			<div className="informacion">
+				<h3 className="informacion__titulo">
+					{titulo}
+				</h3>
+				<p className='informacion__stock'>${precio}</p>
+				<div className="informacion__btns">
+					<ButtonNav text="Comprar" href={`/checkout`} property={() => AgregarAlCarrito(destacado, 1, imagenes[0])}/>
+					<ButtonNav text="Ver más" href={`/item/${id}`} />
+				</div>
 			</div>
 		</div>
 	);
@@ -25,7 +37,7 @@ Producto.propTypes = {
 		id: proptypes.string,
 		name: proptypes.string,
 		imagenes: proptypes.array,
-		stock: proptypes.number,
+		precio: proptypes.number,
 		titulo: proptypes.string,
 	}),
 };

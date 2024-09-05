@@ -1,12 +1,13 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
+
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { pedirDatos } from '../../../../Helpers/PedirProductos';
 import Producto from './Producto';
+import { useContext } from 'react';
+import { DestacadosContext } from '../../../../contexts/DestacadosContext';
+import './styleDestacados.css';
 
 export default function ProductosDestacados() {
-	const [destacados, setDestacados] = useState([]);
+	const { destacados } = useContext(DestacadosContext);
 
 	const responsive = {
 		superLargeDesktop: {
@@ -17,12 +18,12 @@ export default function ProductosDestacados() {
 		},
 		desktop: {
 			breakpoint: { max: 1920, min: 1024 },
-			items: 5,
-			slidesToSlide: 3,
+			items: 4,
+			slidesToSlide: 4,
 		},
 		tablet: {
 			breakpoint: { max: 1024, min: 800 },
-			items: 3,
+			items: 2,
 			slidesToSlide: 2,
 		},
 		mobile: {
@@ -31,24 +32,20 @@ export default function ProductosDestacados() {
 		},
 	};
 
-	useEffect(() => {
-		pedirDatos().then((res) => {
-			setDestacados(
-				res.filter((destacado) => destacado.destacado === true),
-			);
-		});
-	}, []);
+	
 	return (
-		<div className="w-3/4 m-auto lg:w-[90%] ">
-			<h2 className='w-full pt-3 font-serif text-2xl'>Productos Destacados</h2>
+		<div className="cardContainer">
+			<h2 className="cardContainer__titulo">Productos Destacados</h2>
 			<Carousel
 				infinite={true}
 				responsive={responsive}
-				className='relative z-0 m-auto w-full'
+				className="cardContainer__carousel"
 			>
-				{destacados.map((destacado) => (
-					<Producto destacado={destacado} key={destacado.id} />
-				))}
+				{destacados.map((destacado) =>
+					destacado ? (
+						<Producto destacado={destacado} key={destacado.id} />
+					) : null,
+				)}
 			</Carousel>
 		</div>
 	);

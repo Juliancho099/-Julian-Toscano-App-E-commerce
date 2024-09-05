@@ -35,10 +35,56 @@ export const CantidadCont = styled.p`
 
 export const ContCantidad = styled.div`
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	align-items: center;
 	width: 100%;
 	height: auto;
-	padding: 1.2rem;
-	gap: 1rem;
-`
+
+	.count {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: .6rem;
+		width: 100%;
+		gap: 1rem;
+	}
+
+	.stock {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 2px;
+		font-size: 1.1rem;
+
+		span {
+			font-weight: bold;
+			font-size: 1.3rem;
+		}
+	}
+
+	.count-btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 5px;
+	}
+
+	.eliminar {
+		display: flex;
+		width: 100%;
+		justify-content: flex-end;
+		padding: 1.2rem;
+		gap: 1rem;
+
+		svg {
+			cursor: pointer;
+			font-size: 1.3rem;
+			transition: all 0.1s ease-out;
+
+			&:hover {
+				color: #900;
+				transition: all 0.1s ease-out;
+			}
+		}
+	}
+`;

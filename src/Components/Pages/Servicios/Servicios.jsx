@@ -1,6 +1,6 @@
 
 export default function Servicios() {
   return (
-    <div>Servicios</div>
+    <main>Servicios</main>
   )
 }

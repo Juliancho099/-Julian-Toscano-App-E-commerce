@@ -2,21 +2,24 @@ import styled from 'styled-components';
 
 export const ItemListSection = styled.section`
 	display: grid;
-	grid-template-columns: repeat(2, minmax(50%, 1fr));
+	grid-template-columns: minmax(50%, 1fr);
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
 	width: 100%;
 	margin: 0 auto;
+	padding: 0.5rem;
 
-	@media (min-width: 768px) {
+	@media (min-width: 500px) {
+		grid-template-columns: repeat(2,minmax(50%, 1fr));
 		width: 80%;
 	}
 
 	@media (min-width: 990px) {
 		width: 75%;
-		grid-template-columns: repeat(${props => props.$columns || 1}, 1fr);
-		margin: 0 auto;
+		grid-template-columns: repeat(${(props) => props.$columns || 1}, 1fr);
+		margin: auto;
+		margin-bottom: 50px;
 	}
 `;
 
@@ -64,20 +67,32 @@ export const ItemDesc = styled.div`
 	width: 100%;
 	height: 100%;
 
-	a {
+	.botones {
 		width: 100%;
-		text-decoration: none;
-		color: inherit;
-		cursor: pointer;
-		padding: 1rem 0.5rem;
-		border: 1px solid #000;
-		text-align: center;
-		transition: all 0.1s ease-out;
+		display: flex;
+		gap: 10px;
 
-		&:hover {
-			transform: translateY(-10px);
-			border: 2px solid;
+		a:first-of-type {
+			background-color: #000;
+			color: #fff;
+		}
+
+		a {
+			width: 100%;
+			text-decoration: none;
+			color: inherit;
+			cursor: pointer;
+			padding: 1rem 0.5rem;
+			border: 1px solid #000;
+			text-align: center;
 			transition: all 0.1s ease-out;
+
+			&:hover {
+				box-shadow: 0 0 3px 0 #000;
+				transition: all 0.1s ease-out;
+				font-weight: bold;
+
+			}
 		}
 	}
 `;

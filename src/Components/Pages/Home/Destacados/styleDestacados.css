@@ -1,0 +1,135 @@
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.cardContainer__titulo {
+    width: 100%;
+    align-self: flex-start;
+    margin-top: 10px;
+    padding: .3rem;
+    font-size: 1.4rem;
+
+    @media (width >=768px) {
+        font-size: 1.8rem;
+    }
+}
+
+.cardContainer__carousel {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+
+    li {
+        width: 90%;
+        align-self: start;
+        max-height: 1200px;
+        height: 50%;
+
+        @media (width >=768px) {
+            height: 100%;
+        }
+    }
+
+}
+
+.destacados {
+    width: 100%;
+    display: flex;
+    padding: .2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media (width >=768px) {
+        max-width: 400px;
+        width: 90%;
+        justify-content: space-around;
+        align-items: center;
+        gap: 5px;
+    }
+
+    @media (width >=1024px) {
+        width: 100%;
+    }
+}
+
+.destacados__img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        overflow: hidden;
+        border: #000 1px solid;
+        
+    }
+}
+
+.informacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: .1rem;
+    gap: 1rem;
+}
+
+.informacion__titulo {
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    @media (width >=1024px) {
+        font-size: 1.8rem;
+    }
+}
+
+.informacion__stock {
+    width: 100%;
+    font-size: 1.2rem;
+
+    @media (width >=768px) {
+        font-size: 1.4rem;
+    }
+}
+
+.informacion__btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3px;
+
+    a {
+        width: 100%;
+        font-size: 1rem;
+        padding: .5rem;
+        text-align: center;
+        border: 2px solid #000;
+        text-decoration: none;
+        transition: all 0.1s ease-out;
+
+        &:hover {
+            box-shadow: 0 0 3px 0 #000;
+            font-weight: bold;
+        }
+
+    }
+
+    a:first-of-type {
+        background-color: #000;
+        color: #fff;
+    }
+}

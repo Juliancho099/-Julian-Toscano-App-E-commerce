@@ -13,26 +13,25 @@ import { FaAlignLeft, FaX } from 'react-icons/fa6';
 import Logo from '../Logo/Logo';
 import CartWidget from '../Buttons/CartWidget';
 import SearchMenu from '../Buttons/SearchMenu';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import ButtonNav from '../Buttons/ButtonNav/ButtonNav';
 import DropDown from '../Dropdown/DropDown';
 import { useNavigate } from 'react-router-dom';
-import Carrito from '../Carrito/Carrito';
+import { CartContext } from '../../contexts/CartContext';
+import CarritoContainer from '../Carrito/CarritoContainer';
 
 export default function NavBar() {
 	const [Menu, setMenu] = useState(false);
 	const [Dropdown, setDropdown] = useState(false);
-	const [openCart, setOpenCart] = useState(false);
 	const navigate = useNavigate();
+	const { openCart, handleCloseCart } = useContext(CartContext);
 
 	const handleCloseMenus = () => {
 		setMenu(false);
 		setDropdown(false);
 	};
 
-	const handleCloseCart = () => {
-		setOpenCart(!openCart);
-	};
+	
 
 	const handleClick = () => {
 		navigate('/');
@@ -63,21 +62,21 @@ export default function NavBar() {
 						<MenuItem>
 							<ButtonNav
 								text="Servicios"
-								property={() => setMenu(!Menu)}
+								property={handleCloseMenus}
 								href={'/servicios'}
 							/>
 						</MenuItem>
 						<MenuItem>
 							<ButtonNav
 								text="Nosotros"
-								property={() => setMenu(!Menu)}
+								property={handleCloseMenus}
 								href={'/nosotros'}
 							/>
 						</MenuItem>
 						<MenuItem>
 							<ButtonNav
 								text="Contacto"
-								property={() => setMenu(!Menu)}
+								property={handleCloseMenus}
 								href={'/contacto'}
 							/>
 						</MenuItem>
@@ -91,7 +90,7 @@ export default function NavBar() {
 				</SearchContainer>
 				<CartContainer>
 					<CartWidget property={handleCloseCart} />
-					<Carrito op={openCart} property={handleCloseCart} />
+					<CarritoContainer op={openCart} property={handleCloseCart} />
 				</CartContainer>
 			</NavSeccion>
 		</Header>

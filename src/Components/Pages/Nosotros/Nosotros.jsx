@@ -1,6 +1,6 @@
 
 export default function Nosotros() {
   return (
-    <div>Nosotros</div>
+    <main >Nosotros</main>
   )
 }

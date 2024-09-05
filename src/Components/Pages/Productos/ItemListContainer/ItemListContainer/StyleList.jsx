@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ItemListContainer = styled.main`
     width: 100%;
-	padding: 1rem;
+	padding: .6rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

@@ -2,32 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-.button_link {
-	cursor: pointer;
-	color: #333;
-	text-decoration: none;
-	font-size: 1rem;
-	transition: all 0.5s ease;
-	width: 100%;
-
-	&:hover {
-		border-bottom: 1px solid #fd5c11;
-		transition: all 0.5s ease;
-	}
-}
-
 .react-multi-carousel-list {
 	width: 100%;
 	margin: 1rem auto;
 }
 
-.react-multi-carousel-list > ul {
+.react-multi-carousel-list>ul {
 	gap: 0.3rem;
 	padding: 1rem;
 	justify-content: space-between;
 }
 
+html,
 body {
-	position: relative;
-	z-index: 1;
+	height: 100%;
+	margin: 0;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex: 1;
+}
+
+footer {
+	/* estilos para el footer */
+}
+
+
+
+@keyframes scroll {
+	0% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+
+	100% {
+		-webkit-transform: translateX(calc(-500px * 6));
+		transform: translateX(calc(-500px * 6));
+	}
 }
