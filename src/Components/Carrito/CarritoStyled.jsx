@@ -68,6 +68,7 @@ export const Contenedor = styled.div`
 
 	.carrito-body {
 		flex-grow: 1;
+		height: 100%;
 		overflow-y: scroll;
 		overflow-x: hidden;
 		width: 100%;
@@ -75,24 +76,29 @@ export const Contenedor = styled.div`
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 10px;
+		gap: 15px;
 
 		.carrito-vacio {
 			width: 100%;
-			height: 100vh;
+			height: 100%;
 			display: grid;
 			place-items: center;
 			justify-content: space-between;
 			text-align: center;
-			padding: 1rem;
-			grid-template-rows: 40% 50%;
+			padding: 1.5rem;
+			grid-template-areas:
+			'text'
+			'destacado';
+			gap: 2rem;
 
 			.carrito-vacio-text {
+			grid-area: text;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
 				gap: 1rem;
+				margin-bottom: 1rem;
 			}
 
 			.carrito-vacio-button {
@@ -114,6 +120,7 @@ export const Contenedor = styled.div`
 			}
 
 			.destacado {
+				grid-area: destacado;
 				width: 90%;
 				display: flex;
 				flex-direction: column;
